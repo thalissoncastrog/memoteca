@@ -1,0 +1,118 @@
+<section class="container edit-thoughts ff-inter">
+  <header class="header">
+    <h2>Edit a thought:</h2>
+  </header>
+  <form [formGroup]="form">
+    <label for="thought">Thought</label>
+    <input
+      type="textarea"
+      class="input"
+      id="thought"
+      name="content"
+      placeholder="What's on your mind?"
+      formControlName="content"
+    >
+
+    <div class="error__message" *ngIf="form.get('content').hasError('required') && form.get('content').touched">
+      Thought is required!
+    </div>
+
+    <label for="authorship">Authorship or source</label>
+    <input
+      type="text"
+      class="input"
+      id="authorship"
+      name="authorship"
+      placeholder="Who said it?"
+      formControlName="authorship"
+    >
+
+    <div class="error__message"
+      *ngIf="form.get('authorship').hasError('required') && form.get('authorship').touched">
+      Authorship is required!
+    </div>
+
+    <div class="error__message"
+      *ngIf="form.get('authorship').hasError('minlength') && form.get('authorship').touched">
+      Authorship must be at least 3 characters long!
+    </div>
+
+    <label for="model">Select the card model:</label>
+    <div class="container-radio">
+      <div class="radio-model">
+        <label for="model1">
+          <input
+            type="radio"
+            id="model1"
+            name="model"
+            value="model1"
+            formControlName="model"
+          >
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Model 1</span>
+        </label>
+        Preview:
+        <div class="model  model1 ff-roboto-mono">
+          <img src="../../../../assets/images/model1.png" alt="Blue quotation marks">
+          <p class="content">{{ form.get('content').value }}</p>
+          <p class="authorship"><b>{{ form.get('authorship').value }}</b></p>
+        </div>
+      </div>
+
+      <div class="radio-model">
+        <label for="model2">
+          <input
+            type="radio"
+            id="model2"
+            name="model"
+            value="model2"
+            formControlName="model"
+          >
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Model 2</span>
+        </label>
+        Preview:
+        <div class="model  model2 ff-roboto-mono">
+          <img src="../../../../assets/images/model2.png" alt="Light blue quotation marks">
+          <p class="content">{{ form.get('content').value }}</p>
+          <p class="authorship"><b>{{ form.get('authorship').value }}</b></p>
+        </div>
+      </div>
+
+      <div class="radio-model">
+        <label for="model3">
+          <input
+            type="radio"
+            id="model3"
+            name="model"
+            value="model3"
+            formControlName="model"
+          >
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Model 3</span>
+        </label>
+        Preview:
+        <div class="model  model3 ff-roboto-mono">
+          <img src="../../../../assets/images/model3.png" alt="Green quotation marks">
+          <p class="content">{{ form.get('content').value }}</p>
+          <p class="authorship"><b>{{ form.get('authorship').value }}</b></p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button
+          (click)="editThought()"
+          [disabled]="!form.valid"
+          [ngClass]="enableButton()"
+        >Save</button>
+        <button (click)="cancel()" class="button">Cancel</button>
+      </div>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,5 @@
+main {
+  background: url(/assets/images/full-background.png);
+  background-size: cover;
+  min-height: 60vh;
+}

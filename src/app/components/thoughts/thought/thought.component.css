@@ -1,0 +1,64 @@
+.actions {
+  display: flex;
+  justify-content: flex-end
+}
+
+.delete-button {
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.edit-button {
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.thought {
+  background-color: #F8F9FE;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.thought .content {
+  margin: 1rem auto;
+  word-wrap: break-word;
+}
+
+.thought .authorship {
+  word-wrap: break-word;
+}
+
+.model1 {
+  box-shadow: 8px 8px 0px #154580;
+}
+
+.model2 {
+  box-shadow: 8px 8px 0px #6BD1FF;
+}
+
+.model3 {
+  box-shadow: 8px 8px 0px #84EEC1;
+}
+
+.thought-g {
+  width: 556px;
+}
+
+.thought-p {
+  width: 262px;
+}
+
+@media screen and (max-width: 768px) {
+  .thought-g {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .thought-p {
+    width: 100%;
+  }
+}

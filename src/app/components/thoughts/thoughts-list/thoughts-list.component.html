@@ -1,0 +1,20 @@
+<section class="container">
+  <header class="header d-flex">
+    <h2 class="ff-inter">My board</h2>
+    <button routerLink="/create-thought" class="button">Add Thought</button>
+  </header>
+
+  <div class="feed" *ngIf="thoughtsList.length > 0, else noThoughts">
+    <div *ngFor="let thought of thoughtsList">
+      <app-thought [thought]="thought"></app-thought>
+    </div>
+  </div>
+</section>
+
+<ng-template #noThoughts>
+  <div class="ff-inter without-thoughts">
+    <p>
+      There are no thoughts registered yet...
+    </p>
+  </div>
+</ng-template>

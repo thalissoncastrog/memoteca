@@ -1,0 +1,22 @@
+{
+  "thoughts": [
+    {
+      "id": 1,
+      "content": "This is a sample thought to demonstrate the functionality of the Memoteca application. Feel free to add, edit, or delete thoughts as you wish!",
+      "authorship": "Nay",
+      "model": "model1"
+    },
+    {
+      "id": 2,
+      "content": "Another example test 2",
+      "authorship": "User",
+      "model": "model2"
+    },
+    {
+      "id": 3,
+      "content": "This is a Test",
+      "authorship": "Admin",
+      "model": "model3"
+    }
+  ]
+}
