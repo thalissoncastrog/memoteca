@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Thought } from '../thought';
 import { ThoughtService } from '../thought.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-thought',
@@ -15,10 +15,10 @@ export class EditThoughtComponent implements OnInit {
     private service: ThoughtService,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) { }
 
-  form: FormGroup = this.formBuilder.group({
+  form: UntypedFormGroup = this.formBuilder.group({
     content: ['', Validators.compose([
       Validators.required,
       Validators.pattern(/(.|\s)*\S(.|\s)*/)
